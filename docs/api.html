@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Backend Clinic API Documentation</title>
+  <style>
+    :root { --bg:#0b1020; --card:#121a33; --ink:#e8ecf7; --muted:#9fb0d6; --brand:#6aa6ff; --accent:#00d3a7; }
+    * { box-sizing: border-box }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ink); background: radial-gradient(1200px 800px at 20% -10%, #1c2854 0, transparent 60%), radial-gradient(1200px 800px at 120% 0%, #192a4f 0, transparent 60%), var(--bg); }
+    header { padding: 32px 20px 16px; border-bottom: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)); position: sticky; top:0; backdrop-filter: blur(8px); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    h2 { margin: 32px 0 12px; font-size: 22px; color: var(--brand); }
+    h3 { margin: 20px 0 8px; font-size: 18px; color: var(--accent); }
+    p, li, pre, code { color: var(--ink); }
+    .muted { color: var(--muted); }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.2); margin: 16px 0; }
+    code, pre { background: #0a1229; color:#d9e4ff; border-radius: 8px; }
+    code { padding: 2px 6px; }
+    pre { padding: 12px; overflow: auto; line-height: 1.45; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .tag { display:inline-block; padding:2px 8px; border-radius:999px; background:#0a1229; color:#bcd0ff; font-size:12px; border:1px solid rgba(255,255,255,.08) }
+    .endpoint { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .method { font-weight:700; color:#111; background:#6aa6ff; border-radius:999px; padding:2px 10px; }
+    .protected { background:#00d3a7; color:#071a15; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Backend Clinic API</h1>
+      <div class="muted">Base URL: <code>http://localhost:5000</code></div>
+      <div class="muted small">All protected endpoints require <code>Authorization: Bearer &lt;TOKEN&gt;</code>.</div>
+    </div>
+  </header>
+  <main class="wrap">
+
+    <section class="card">
+      <h2>Authentication</h2>
+      <div class="grid">
+        <div>
+          <div class="endpoint"><span class="method">POST</span><code>/api/auth/signup</code></div>
+          <p>Create a new user account. Supports JSON or multipart with optional image.</p>
+          <h3>JSON Request</h3>
+<pre>{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "phone": "+91-9999999999",
+  "password": "123456"
+}</pre>
+          <h3>Multipart (optional image)</h3>
+<pre>Fields:
+  name: Alice
+  email: alice@example.com
+  phone: +91-9999999999
+  password: 123456
+  image (file): avatar.jpg
+</pre>
+          <h3>Response</h3>
+<pre>{
+  "message": "Signup successful",
+  "user": { "_id": "...", "name": "Alice", "email": "...", "phone": "...", "photoUrl": "..." }
+}</pre>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method">POST</span><code>/api/admin/signup</code></div>
+          <p>Create a new admin account. Supports JSON or multipart with optional image.</p>
+          <h3>JSON Request</h3>
+<pre>{
+  "name": "Dr Admin",
+  "email": "admin@example.com",
+  "phone": "+91-8888888888",
+  "password": "123456"
+}</pre>
+          <h3>Multipart (optional image)</h3>
+<pre>Fields:
+  name: Dr Admin
+  email: admin@example.com
+  phone: +91-8888888888
+  password: 123456
+  image (file): admin.jpg
+</pre>
+          <h3>Response</h3>
+<pre>{
+  "message": "Signup successful",
+  "admin": { "_id": "...", "name": "...", "email": "...", "phone": "...", "photoUrl": "..." }
+}</pre>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method">POST</span><code>/api/auth/login</code></div>
+          <p>Login as a user, returns JWT and user profile (no password).</p>
+          <h3>Request</h3>
+<pre>{
+  "email": "alice@example.com",
+  "password": "123456"
+}</pre>
+          <h3>Response</h3>
+<pre>{
+  "message": "Login successful",
+  "token": "&lt;USER_JWT&gt;",
+  "user": { "_id": "...", "name": "Alice", "email": "...", "photoUrl": "..." }
+}</pre>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method">POST</span><code>/api/admin/login</code></div>
+          <p>Login as an admin, returns JWT and admin profile (no password).</p>
+          <h3>Request</h3>
+<pre>{
+  "email": "admin@example.com",
+  "password": "123456"
+}</pre>
+          <h3>Response</h3>
+<pre>{
+  "message": "Admin login successful",
+  "token": "&lt;ADMIN_JWT&gt;",
+  "admin": { "_id": "...", "name": "...", "email": "...", "photoUrl": "..." }
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Public APIs</h2>
+      <div>
+        <div class="endpoint"><span class="method">GET</span><code>/api/public/users/search?q=&lt;text&gt;</code></div>
+        <p>Public smart search by name/email/phone. No authentication required.</p>
+        <div class="small muted">Optional filters: <code>?name=..</code>, <code>?email=..</code>, <code>?phone=..</code></div>
+        <h3>Example</h3>
+<pre>curl -Method GET "http://localhost:5000/api/public/users/search?q=dev"</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>User APIs</h2>
+      <div class="grid">
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/auth/me</code></div>
+          <p>Get full details for the logged-in user: profile + all lab reports.</p>
+          <h3>Response</h3>
+<pre>{
+  "user": { "_id": "...", "name": "...", "email": "...", "photoUrl": "..." },
+  "reports": [
+    {
+      "_id": "...",
+      "type": "blood" | "urine" | "file",
+      "title": "...",
+      "notes": "...",
+      "fileUrl": "https://...", // present for file reports
+      "data": { /* textual JSON reports */ },
+      "createdAt": "..."
+    }
+  ]
+}</pre>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/auth/my-reports</code></div>
+          <p>List all reports for the logged-in user.</p>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/auth/profile?email=&lt;email&gt;</code></div>
+          <p>Get a user profile by email. Excludes password.</p>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/auth/profile/:id</code></div>
+          <p>Get a user profile by id. Excludes password.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Admin APIs</h2>
+      <div class="grid">
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/admin/users</code></div>
+          <p>List all registered users (excludes password).</p>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/admin/users/find?q=&lt;text&gt;</code></div>
+          <p>Smart common search. Enter anything (name/email/phone). Returns up to 50 users.</p>
+          <div class="small muted">Also available as <code>POST /api/admin/users/find</code> with body <code>{"q":"text"}</code>.</div>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/admin/users/search</code></div>
+          <p>Targeted filters by query string: <code>?q=..</code>, <code>?name=..</code>, <code>?email=..</code>, <code>?phone=..</code>.</p>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">GET</span><code>/api/admin/users/:userId/reports</code></div>
+          <p>List all reports for a specific user.</p>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">POST</span><code>/api/admin/users/:userId/reports/json</code></div>
+          <p>Upload a textual JSON report (no file). Body must be JSON.</p>
+          <h3>Request</h3>
+<pre>{
+  "type": "blood",
+  "title": "Blood Panel - Jan 2024",
+  "notes": "Uploaded from admin panel",
+  "data": { /* arbitrary JSON object, e.g., your lab schema */ }
+}</pre>
+          <div class="small muted">Headers: <code>Authorization: Bearer &lt;ADMIN_JWT&gt;</code>, <code>Content-Type: application/json</code></div>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">POST</span><code>/api/admin/users/:userId/reports/file</code></div>
+          <p>Upload a report file (image/PDF/JSON/TXT). <span class="tag">form-data</span>. <span class="small muted">Field: <code>report</code>|<code>file</code>|<code>image</code>|<code>photo</code>. <code>type</code> optional (defaults to <code>"file"</code>).</span></p>
+          <h3>Form fields</h3>
+          <ul>
+            <li><code>report</code> | <code>file</code> | <code>image</code> | <code>photo</code>: the file</li>
+            <li><code>type</code> (optional): default <code>"file"</code></li>
+            <li><code>title</code> (optional)</li>
+            <li><code>notes</code> (optional)</li>
+          </ul>
+          <div class="small muted">Headers: <code>Authorization: Bearer &lt;ADMIN_JWT&gt;</code></div>
+        </div>
+        <div>
+          <div class="endpoint"><span class="method protected">POST</span><code>/api/admin/image-upload</code></div>
+          <p>Upload/update admin profile image. <span class="tag">form-data</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>User Image Upload</h2>
+      <div>
+        <div class="endpoint"><span class="method protected">POST</span><code>/api/upload/image?userId=&lt;id&gt;</code></div>
+        <div class="endpoint"><span class="method protected">POST</span><code>/api/upload/image?email=&lt;email&gt;</code></div>
+        <p>Upload a user's profile image. <span class="tag">form-data</span>. Saves <code>photoUrl</code> to the user.</p>
+        <h3>Form fields</h3>
+        <ul>
+          <li><code>image</code> | <code>file</code> | <code>photo</code>: the image file</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Auth & Headers</h2>
+      <ul>
+        <li><strong>User token</strong>: from <code>/api/auth/login</code></li>
+        <li><strong>Admin token</strong>: from <code>/api/admin/login</code></li>
+        <li><strong>Header</strong>: <code>Authorization: Bearer &lt;TOKEN&gt;</code></li>
+      </ul>
+      <p class="muted small">JWT expiry is 7 days. Ensure <code>USER_JWT_SECRET</code> and <code>ADMIN_JWT_SECRET</code> are set in <code>.env</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Examples (PowerShell curl)</h2>
+      <h3>Login (user)</h3>
+<pre>curl -Method POST http://localhost:5000/api/auth/login `
+  -H "Content-Type: application/json" `
+  -Body '{"email":"alice@example.com","password":"123456"}'
+</pre>
+      <h3>My full details</h3>
+<pre>$UTOKEN = "&lt;USER_JWT&gt;"
+curl -Method GET http://localhost:5000/api/auth/me `
+  -H "Authorization: Bearer $UTOKEN"
+</pre>
+      <h3>Admin upload JSON report</h3>
+<pre>$ATOKEN = "&lt;ADMIN_JWT&gt;"
+$USER_ID = "&lt;USER_ID&gt;"
+curl -Method POST "http://localhost:5000/api/admin/users/$USER_ID/reports/json" `
+  -H "Authorization: Bearer $ATOKEN" `
+  -H "Content-Type: application/json" `
+  -Body (@'{
+  "type": "blood",
+  "title": "Blood Panel - Jan 2024",
+  "data": {"LAB_NAME": "ABHISHEK PATHO LAB"}
+}'@)
+</pre>
+      <h3>Admin upload report file</h3>
+<pre>curl -Method POST "http://localhost:5000/api/admin/users/$USER_ID/reports/file" `
+  -H "Authorization: Bearer $ATOKEN" `
+  -Form "report=@C:\\path\\to\\report.pdf" `
+  -Form "title=Report"
+</pre>
+    </section>
+
+    <footer class="muted small" style="padding:24px 0 60px;">
+      Generated for Backend Clinic project.
+    </footer>
+  </main>
+</body>
+</html>

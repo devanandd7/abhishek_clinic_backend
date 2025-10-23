@@ -1,0 +1,339 @@
+{
+  "LAB_NAME": "ABHISHEK PATHO LAB",
+  "ADDRESS": "आदर्श मध्य विद्यालय (दीनमा स्कूल के सामने) प्रेम मार्केट, बेलगंग, गया",
+  "PATIENT_NAME": "Mamorma devi",
+  "DATE": "11.01.24",
+  "REF_BY_DR": "Self",
+  "BIO_CHEMISTRY": [
+    {
+      "TEST": "Blood Sugar F",
+      "RESULT": "66.4",
+      "NORMAL_RANGE": "upto 140mg/dl"
+    },
+    {
+      "TEST": "Food Glucose 2Hr",
+      "RESULT": "",
+      "NORMAL_RANGE": "upto 140mg/dl"
+    },
+    {
+      "TEST": "Bilirubin",
+      "RESULT": "",
+      "NORMAL_RANGE": "upto 1.2mg/dl"
+    },
+    {
+      "TEST": "SGOT",
+      "RESULT": "",
+      "NORMAL_RANGE": "5-40u/l"
+    },
+    {
+      "TEST": "LDH",
+      "RESULT": "",
+      "NORMAL_RANGE": "70-180u/l"
+    },
+    {
+      "TEST": "CPK",
+      "RESULT": "",
+      "NORMAL_RANGE": "20-170u/l"
+    },
+    {
+      "TEST": "S. Triglyceride",
+      "RESULT": "",
+      "NORMAL_RANGE": "60-165mg/dl"
+    },
+    {
+      "TEST": "Total Cholesterol",
+      "RESULT": "",
+      "NORMAL_RANGE": "150-240mg/dl"
+    },
+    {
+      "TEST": "HDL Cholesterol",
+      "RESULT": "",
+      "NORMAL_RANGE": "30-75mg/dl"
+    },
+    {
+      "TEST": "LDC/Cholesterol",
+      "RESULT": "",
+      "NORMAL_RANGE": "90-140mg/dl"
+    },
+    {
+      "TEST": "VLDL/Cholesterol",
+      "RESULT": "",
+      "NORMAL_RANGE": "5-40mg/dl"
+    },
+    {
+      "TEST": "LDL/HDL/TLC",
+      "RESULT": "",
+      "NORMAL_RANGE": "3.5-5.0"
+    },
+    {
+      "TEST": "TC/HDLC Ratio",
+      "RESULT": "",
+      "NORMAL_RANGE": "3.0-5.0"
+    },
+    {
+      "TEST": "SGPT",
+      "RESULT": "",
+      "NORMAL_RANGE": "5-40u/l"
+    },
+    {
+      "TEST": "S.GPT",
+      "RESULT": "",
+      "NORMAL_RANGE": "5-40u/l"
+    },
+    {
+      "TEST": "Total Bilirubin",
+      "RESULT": "",
+      "NORMAL_RANGE": "0.2-0.8mg/dl"
+    },
+    {
+      "TEST": "Conj. Bilirubin",
+      "RESULT": "",
+      "NORMAL_RANGE": "0.1-0.4mg/dl"
+    },
+    {
+      "TEST": "Un. Conj. Bilirubin",
+      "RESULT": "",
+      "NORMAL_RANGE": "0.1-0.4mg/dl"
+    },
+    {
+      "TEST": "Alk Phosphat",
+      "RESULT": "",
+      "NORMAL_RANGE": "3-13KA Unit"
+    },
+    {
+      "TEST": "Total Protein",
+      "RESULT": "",
+      "NORMAL_RANGE": "6.0-8.0gm/dl"
+    },
+    {
+      "TEST": "Albumin",
+      "RESULT": "",
+      "NORMAL_RANGE": "3.7-5.3gm/dl"
+    },
+    {
+      "TEST": "Globulin",
+      "RESULT": "",
+      "NORMAL_RANGE": "1.8-3.6gm/dl"
+    },
+    {
+      "TEST": "A/G Ratio",
+      "RESULT": "",
+      "NORMAL_RANGE": "1.2-2.1"
+    },
+    {
+      "TEST": "Urea",
+      "RESULT": "",
+      "NORMAL_RANGE": "15-40mg/dl"
+    },
+    {
+      "TEST": "Bun",
+      "RESULT": "",
+      "NORMAL_RANGE": "7-12mg/dl"
+    },
+    {
+      "TEST": "Creatinine",
+      "RESULT": "",
+      "NORMAL_RANGE": "1.2mg/dl"
+    },
+    {
+      "TEST": "Uric Acid",
+      "RESULT": "",
+      "NORMAL_RANGE": "2-6mg/dl"
+    },
+    {
+      "TEST": "Calcium",
+      "RESULT": "",
+      "NORMAL_RANGE": "8-11mg/dl"
+    },
+    {
+      "TEST": "Phosphate",
+      "RESULT": "",
+      "NORMAL_RANGE": "3-5mg/dl"
+    },
+    {
+      "TEST": "Sodium",
+      "RESULT": "",
+      "NORMAL_RANGE": "138-149mEq/L"
+    },
+    {
+      "TEST": "Potassium",
+      "RESULT": "",
+      "NORMAL_RANGE": "3.8-5.2mEq/L"
+    },
+    {
+      "TEST": "Chloride",
+      "RESULT": "",
+      "NORMAL_RANGE": "100-107mEq/L"
+    },
+    {
+      "TEST": "Acid Phos",
+      "RESULT": "",
+      "NORMAL_RANGE": "1.5KA units"
+    },
+    {
+      "TEST": "Amylase",
+      "RESULT": "",
+      "NORMAL_RANGE": "30-340u/dl"
+    }
+  ],
+  "HEMATOLOGY": [
+    {
+      "TEST": "Haemoglobin",
+      "RESULT": "",
+      "NORMAL_RANGE": "8.0-120mg/dl"
+    },
+    {
+      "TEST": "TLC",
+      "RESULT": "4.5-9.5 1000/cumm",
+      "NORMAL_RANGE": "4.5-9.5 1000/cumm"
+    },
+    {
+      "TEST": "DLC",
+      "RESULT": "37.54/%",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "PCV",
+      "RESULT": "",
+      "NORMAL_RANGE": "37.54/%"
+    },
+    {
+      "TEST": "Platelet Count",
+      "RESULT": "",
+      "NORMAL_RANGE": "150-400 Th./cumm"
+    },
+    {
+      "TEST": "Neutrophil",
+      "RESULT": "",
+      "NORMAL_RANGE": "40-75 %"
+    },
+    {
+      "TEST": "Lymphocyte",
+      "RESULT": "",
+      "NORMAL_RANGE": "20-45 %"
+    },
+    {
+      "TEST": "Monocyte",
+      "RESULT": "",
+      "NORMAL_RANGE": "02-10 %"
+    },
+    {
+      "TEST": "Eosinophil",
+      "RESULT": "",
+      "NORMAL_RANGE": "00-06 %"
+    },
+    {
+      "TEST": "Basophil",
+      "RESULT": "",
+      "NORMAL_RANGE": "00-01 %"
+    },
+    {
+      "TEST": "MCV",
+      "RESULT": "",
+      "NORMAL_RANGE": "78-95fL"
+    },
+    {
+      "TEST": "MCH",
+      "RESULT": "",
+      "NORMAL_RANGE": "27-32pg"
+    },
+    {
+      "TEST": "MCHC",
+      "RESULT": "",
+      "NORMAL_RANGE": "30-35 gm/dl"
+    },
+    {
+      "TEST": "RDW",
+      "RESULT": "",
+      "NORMAL_RANGE": "11.5-14.5 %"
+    },
+    {
+      "TEST": "BT",
+      "RESULT": "",
+      "NORMAL_RANGE": "1 to 5 Minutes"
+    },
+    {
+      "TEST": "CT",
+      "RESULT": "",
+      "NORMAL_RANGE": "1 to 7 Minutes"
+    },
+    {
+      "TEST": "E.S.R. /10tu",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "Sputamfor A.F.B.",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "E.S.R. I",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "E.S.R. II",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "E.S.R. Avg.",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    }
+  ],
+  "SEROLOGY": [
+    {
+      "TEST": "WIDAL TEST",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "S. TYPHO",
+      "RESULT": "",
+      "NORMAL_RANGE": "1/20 1/40 1/80 1/160 1/320"
+    },
+    {
+      "TEST": "S. TYPHI H",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "S.PARATYPHIA H",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "S. PARATYPHI BH",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "HIV",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "HCV",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "NS1 Dengue Test",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "IgG",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    },
+    {
+      "TEST": "IgM",
+      "RESULT": "",
+      "NORMAL_RANGE": ""
+    }
+  ],
+  "REMARKS": "Not valid of medico legal purpose."
+}
